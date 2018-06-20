@@ -1,0 +1,15 @@
+{
+  "name": "Manu Auto Correct",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Bon alors déjà c'est M. Le Président",
+  "icons": {
+    "128": "128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["js/correct.js"]
+    }
+  ]
+}
