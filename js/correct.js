@@ -6,6 +6,9 @@ while(textNode=walk.nextNode()) {
 	'Monsieur le Président de la République|'+
 	'Monsieur le Président|'+
 	'Président de la République française|'+
-	'Président de la République', 'gi')
+	'Président de la République|' +
+	'Emmanuel Jean-Michel Frédéric Macron|',
+	'M. Macron', 'gi');
+
     textNode.nodeValue = textNode.nodeValue.replace(rExp, 'Manu')
 }
