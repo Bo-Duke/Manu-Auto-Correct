@@ -7,6 +7,7 @@ var rManu = new RegExp('Emmanuel( |)Macron|'+
 	'M. le Pr[eé]sident de la R[eé]publique|'+
 	'Monsieur le Pr[eé]sident de la R[eé]publique|'+
 	'Monsieur le Pr[eé]sident|'+
+	'Emmanuel Jean-Michel Frédéric Macron|'+
 	'M. Macron', 'gi')
 	
 var rBoth = new RegExp('Emmanuel et Brigitte Macron|'+
