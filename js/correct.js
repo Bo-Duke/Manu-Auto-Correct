@@ -11,4 +11,7 @@ while(textNode=walk.nextNode()) {
 	'M. Macron', 'gi');
 
     textNode.nodeValue = textNode.nodeValue.replace(rExp, 'Manu')
+    
+    var remplaceAmiens = new RegExp('Amiens');
+    textNode.nodeValue = textNode.nodeValue.replace(remplaceAmiens, 'Ouagadougou')
 }
