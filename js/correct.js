@@ -7,6 +7,7 @@ while(textNode=walk.nextNode()) {
 	'Monsieur le Président|'+
 	'Président de la République française|'+
 	'Président de la République|' +
+	'Le Président Macron|'+
 	'Emmanuel Jean-Michel Frédéric Macron|',
 	'M. Macron', 'gi');
 
