@@ -3,11 +3,11 @@ var textNode,
 const sPres = 'pr[ée]sident' +
         '(?:\\s+de\\s+la\\s+r[ée]publique(?:\\s+fran[çc]aise)?|' +
         '\\s+(?:[eé]mmanuel\\s+)?macron|\\s+fran[çc]ais)?(?!\\s+[(]|\\s+de\\s+(?!la|f))'
-const rExpPres = new RegExp('du(?=\\s+' + sPres + ')', 'gi')
-const rExpManu = new RegExp('emmanuel(?:\\s+|)macron|' +
+const rExpDuPres = new RegExp('du(?=\\s+' + sPres + ')', 'gi')
+const rExpManu = new RegExp('[eé]mmanuel\\s*macron|' +
     '(?:\\bm.?|monsieur|[eé]mmanuel(?:\\s+jean-michel\\s+fr[eé]d[eé]ric)?)\\s+macron|' +
     '(?:\\bm.?\\s+|monsieur\\s+)?le\\s+' + sPres + '|' +
-    'the\\s+(?:president\\s+of\\s+france|french\\spresident)'
+    'the\\s+(?:president\\s+of\\s+france|french\\s+president)'
         , 'gi')
 
 while ((textNode = walk.nextNode())) {
@@ -17,6 +17,6 @@ while ((textNode = walk.nextNode())) {
     .replace(/[eé]mmanuel\s+et\s+brigitte macron/gi, 'Manu et Brigitte')
     .replace(/brigitte\s+et\s+[eé]mmanuel\s+macron/gi, 'Brigitte et Manu')
     .replace(/couple\s+macron/gi, 'couple à Manu')
-    .replace(rExpPres, 'de le')
+    .replace(rExpDuPres, 'de le')
     .replace(rExpManu, 'Manu')
 }
