@@ -1,7 +1,7 @@
-var textNode, walk=document.createTreeWalker(document,NodeFilter.SHOW_TEXT,null,false);
+const textNode, walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT,null,false);
 const rExp = new RegExp('Emmanuel Macron|'+
 	'EmmanuelMacron|'+
-	'M. le Président de la République|'+ // Keep the dot in case of "Mr" or "M."
+	'M[\.r] le Président de la République|'+ // Keep the dot in case of "Mr" or "M."
 	'le Président de la République|'+ // Put this one after, so that the one above matches first
 	'Monsieur le Président de la République|'+
 	'Monsieur le Président|'+
@@ -9,8 +9,10 @@ const rExp = new RegExp('Emmanuel Macron|'+
 	'Président de la République|' +
 	'Le Président Macron|' +
 	'Emmanuel Jean-Michel Frédéric Macron|' +
-	'M. Macron', 'gi');
+	'M[\.r] Macron', 'gi');
 
 while(textNode=walk.nextNode()) {
     textNode.nodeValue = textNode.nodeValue.replace(rExp, 'Manu');
 }
+
+document.title = document.title.replace(rExp, 'Manu');
