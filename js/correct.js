@@ -1,4 +1,5 @@
-const textNode, walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT,null,false);
+var textNode;
+const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT,null,false);
 const rExp = new RegExp('Emmanuel Macron|'+
 	'EmmanuelMacron|'+
 	'M[\.r] le Président de la République|'+ // Keep the dot in case of "Mr" or "M."
